@@ -31,7 +31,7 @@ const ptComponents = {
 }
 
 const Post = ({post}) => {
-  const { title = 'Missing title', categories, mainImage, publishedAt, blockContent = [], markdown} = post
+  const { title, categories, mainImage, publishedAt, blockContent = [], markdown} = post
   return (
     <Layout>
       <Head>
