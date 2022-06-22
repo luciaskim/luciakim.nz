@@ -32,7 +32,7 @@ const ptComponents = {
 
 
 
-function Post({ post }){
+const Post = ({post}) => {
   const { title, categories, mainImage, publishedAt, body = []} = post
   return (
     <Layout>
@@ -41,7 +41,7 @@ function Post({ post }){
       </Head>
       <article>
         <h1>{title}</h1>
-        <span>{categories} | <Date dateString={publishedAt} /></span>
+        <span>{categories} | {publishedAt}</span>
         {mainImage && (
           <div>
             <Image
@@ -90,5 +90,4 @@ export async function getStaticProps(context) {
     }
   }
 }
-
-export default Post
+export default Post;
