@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
+import groq from 'groq'
+import client from '../client'
 
-export default function Home({ allPostsData }) {
+const Index = ({posts}) => {
   return (
     <Layout home>
       <Head>
@@ -17,19 +18,22 @@ export default function Home({ allPostsData }) {
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <h2 className={utilStyles.headingLg}>Latest Posts</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
+          {posts.length > 0 && posts.map(
+            ({ _id, title = '', slug = '', publishedAt = '' }) =>
+              slug && (
+                <li className={utilStyles.listItem} key={_id}>
+                  <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
+                    <a>{title}</a>
+                  </Link>
+                  <br />
+                  <small className={utilStyles.lightText}>
+                    <Date dateString={publishedAt} />
+                  </small>
+                </li>
+              )
+          )}
         </ul>
       </section>
     </Layout>
@@ -37,10 +41,14 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const posts = await client.fetch(groq`
+    *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
+  `)
   return {
     props: {
-      allPostsData
+      posts
     }
   }
 }
+
+export default Index;
