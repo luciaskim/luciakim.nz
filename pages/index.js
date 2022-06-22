@@ -29,7 +29,7 @@ const Index = ({posts}) => {
                   </Link>
                   <br />
                   <small className={utilStyles.lightText}>
-                    {categories} | <Date dateString={publishedAt} />
+                    <Date dateString={publishedAt} />
                   </small>
                 </li>
               )

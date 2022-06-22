@@ -47,8 +47,8 @@ const Post = ({ post }) => {
             <Image
               src={urlFor(mainImage)}
               alt="AWSome Day header"
-              width="1200"
-              height="400"
+              width='1200'
+              height='400'
             />
           </div>
         )}
