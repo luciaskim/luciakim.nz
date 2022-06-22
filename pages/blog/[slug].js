@@ -32,7 +32,7 @@ const ptComponents = {
 
 
 
-const Post = ({post}) => {
+function Post({ post }){
   const { title, categories, mainImage, publishedAt, body = []} = post
   return (
     <Layout>
@@ -84,14 +84,11 @@ export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params
   const post = await client.fetch(query, { slug })
-  if (!post.length) {
-    return <LoadingSpinner />
-  } else {
-    return {
-      props: {
-        post
-      }
+  return {
+    props: {
+      post
     }
   }
 }
-export default Post;
+
+export default Post
