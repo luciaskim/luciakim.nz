@@ -19,7 +19,7 @@ const ptComponents = {
       }
       return (
         <Image
-          alt={value.alt || ' '}
+          alt={value?.alt || ' '}
           loading="lazy"
           src={urlFor(value)}
           width="600"
@@ -41,7 +41,7 @@ const Post = ({post}) => {
       </Head>
       <article>
         <h1>{title}</h1>
-        <span>{categories} | {publishedAt}</span>
+        <span>{categories} | <Date dateString={publishedAt} /></span>
         {mainImage && (
           <div>
             <Image
@@ -82,7 +82,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
-  const { slug = "" } = context.params
+  const { slug = "" } = context?.params
   const post = await client.fetch(query, { slug })
   return {
     props: {
