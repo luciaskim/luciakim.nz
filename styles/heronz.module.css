@@ -1,0 +1,620 @@
+/*
+Theme Name: Kotuku
+Theme URI: https://github.com/HeronzWD/kotuku
+Author: Heronz Web Development
+Description: This theme is for the online tutoring platform Heronz.
+Version: 1.0.8
+License: MIT License
+License URI: https://opensource.org/licenses/mit-license.php
+Text Domain: kotuku
+
+This theme is solely for the purpose of Heronz.org, the online interactive
+platform for students by students. This project began in 2017, and is
+continually improved. All work, unless attributed otherwise, is of The Heronz
+Web Development Division. Many thanks to all that have contributed.
+
+Normalizing styles have been helped along thanks to the work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*----------------------------------------------------------------------------*\
+>>> TABLE OF CONTENTS:
+-------------------------------------------------------------------------------
+# Normalise
+# Base
+# Container
+# Object
+# Utilities
+# Partials
+## Masthead
+## Colophon
+## Classroom
+\*----------------------------------------------------------------------------*/
+
+  /*----------------------------------------------------------------------------*\
+  # Base
+  \*----------------------------------------------------------------------------*/
+  /* body {
+    color: #03080C;
+    font-family: 'Alegreya Sans', Helvetica, sans-serif;
+    font-size: 100%;
+    height: 100%;
+    min-height: 600px;
+    min-width: 760px;
+  }
+  
+  main {
+    background: #fff;
+  }
+  
+  p, li {
+    font-size: 1.4em;
+    line-height: 1.2em;
+    padding: 0.3em 0;
+  }
+  
+  p:empty {
+    display: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    display: block;
+    line-height: normal;
+    text-decoration: none;
+    color: #088009;
+  }
+  
+  h1 {
+    font-family: 'Noto Serif', 'Times New Roman', serif;
+    font-size: 3.4em;
+    font-weight: 400;
+    margin: 1.5em 0 0.5em;
+    text-align: center;
+  }
+  
+  h2 {
+    font-family: 'Noto Serif', 'Times New Roman', serif;
+    font-size: 3em;
+    font-weight: 400;
+    margin: 1.3em 0 0.5em;
+    text-align: center;
+  }
+  
+  h3 {
+    font-family: 'Noto Serif', 'Times New Roman', serif;
+    font-size: 2.6em;
+    font-weight: 400;
+    margin: 1.1em 0 0;
+  }
+  
+  h4 {
+    font-family: 'Noto Serif', 'Times New Roman', serif;
+    font-size: 2.2em;
+    font-weight: 400;
+    margin: 1em 0 0;
+  }
+  
+  h5 {
+    font-family: 'Noto Serif', 'Times New Roman', serif;
+    font-size: 1.8em;
+    font-weight: 400;
+    margin: 0.8em 0 0;
+  }
+  
+  h6 {
+    font-family: 'Noto Serif', 'Times New Roman', serif;
+    font-size: 1.4em;
+    font-weight: 400;
+    margin: 0.4em 0 0;
+  }
+  
+  hr {
+    border-top: 1px solid #030806;
+  }
+  
+  a:link {
+    color: #019182;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: #ff954f;
+  }
+  
+  a:hover {
+    color: #ff954f;
+    text-decoration: none;
+  }
+  
+  blockquote {
+    font-size: 1.2em;
+    padding: 30px 0;
+  }
+   */
+  .subhead {
+    font-size: 1.9em;
+    margin: 70px auto 30px;
+    text-align: center;
+    width: 60%;
+  }
+  
+  /* header .subhead {
+    font-size: 2.2em;
+  } */
+  
+  
+  /*----------------------------------------------------------------------------*\
+  # Container
+  \*----------------------------------------------------------------------------*/
+  .c_odd {
+    background: white;
+    border-bottom: 120px solid white;
+  }
+  
+  .c_even {
+    background: #d0e2db;
+    border-bottom: 120px solid #d0e2db;
+  }
+  
+  
+  /* .c_hero {
+  
+  } */
+  
+  .c_squish {
+    margin: auto;
+    width: 90%;
+  }
+  
+  .c_squash {
+    margin: auto;
+    width: 60%;
+  }
+  
+  .c_squeeze {
+    margin: auto;
+    width: 30%;
+  }
+  
+  .c_flex {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    padding: 60px 0 30px;
+  }
+  
+ 
+  
+  .c_flex_1of12 {
+    width: 8.3333%;
+    display: inline-block;
+    float: left;
+    padding: 0 0.7vw;
+    
+  }
+  
+  .c_flex_2of12 {
+    width: 16.6666%;
+    display: inline-block;
+    float: left;
+    padding: 0 0.7vw;
+  }
+  
+  .c_flex_3of12 {
+    width: 25%;
+    display: inline-block;
+    float: left;
+    padding: 0 0.7vw;
+  }
+  
+  .c_flex_4of12 {
+    width: 33.3333%;
+    display: inline-block;
+    float: left;
+    padding: 0 0.7vw;
+  }
+  
+  .c_flex_5of12 {
+    width: 41.6666%;
+    display: inline-block;
+    float: left;
+    padding: 0 0.7vw;
+  }
+  
+  .c_flex_6of12 {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    padding: 0 0.7vw;
+  }
+  
+  .c_flex_7of12 {
+    width: 58.33333%;
+    display: inline-block;
+    float: left;
+    padding: 0 0.7vw;
+  }
+  
+  .c_flex_8of12 {
+    width: 66.6666%;
+    display: inline-block;
+    float: left;
+    padding: 0 0.7vw;
+  }
+  
+  .c_flex_9of12 {
+    width: 75%;
+    display: inline-block;
+    float: left;
+    padding: 0 0.7vw;
+  }
+  
+  .c_flex_10of12 {
+    width: 83.33333%;
+    display: inline-block;
+    float: left;
+    padding: 0 0.7vw;
+  }
+  
+  .c_flex_8of12 {
+    width: 91.6666%;
+    display: inline-block;
+    float: left;
+    padding: 0 0.7vw;
+  }
+  
+  .c_flex_12of12 {
+    width: 100%;
+    display: inline-block;
+    float: left;
+    padding: 0 0.7vw;
+  }
+  
+  /*----------------------------------------------------------------------------*\
+  # Object
+  \*----------------------------------------------------------------------------*/
+  .o_section_div {
+    width: 100%;
+    height: auto;
+  }
+  
+  .o_illust {
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .o_subject_icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    min-width: 300px;
+    position: 'relative';
+  }
+  
+  
+  .o_btn_primary {
+    background: transparent;
+    border: 0.1em solid #ff954f;
+    border-radius: 0.2em;
+    color: #03080C;
+    cursor: pointer;
+    display: block;
+    font-family: 'Alegreya Sans', Helvetica, sans-serif;
+    font-size: 1.4em;
+    padding: 0.3em 1em;
+    margin: 2em 0 0 ;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+   }
+  
+  .o_btn_primary:hover {
+    background: #ff954f;
+   }
+  
+  .o_btn_secondary {
+    background: #ff954f;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Alegreya Sans', Helvetica, sans-serif;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .o_btn_secondary:hover {
+    background: #ff954f;
+  }
+  
+  .o_logo, .o_logomark, .o_logotype {
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .o_slideshow {
+    border: 1px solid #019182;
+    margin: 1.2em auto 1.8em;
+    min-width: 740px;
+    padding: 0;
+    position: relative;
+    width: 64%;
+  }
+  /* Slideshow CSS located under ##Slideshow*/
+  
+  /*----------------------------------------------------------------------------*\
+  # Utilities
+  \*----------------------------------------------------------------------------*/
+  
+  .u_align_right {
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  
+  .u_align_vert {
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+  }
+  
+  .u_hide {
+    display: none;
+  }
+  
+  /*----------------------------------------------------------------------------*\
+   # Partials
+  \*----------------------------------------------------------------------------*/
+  /*----------------------------------------------------------------------------*\
+    ## Masthead
+  \*----------------------------------------------------------------------------*/
+  #masthead {
+    background-color: #fff;
+    border-bottom: 2px solid #d0e2db;
+    height: auto;
+    padding: 0 0 0 0;
+  }
+  
+  #masthead nav > a {
+    color: #03080C;
+    border-top: 0.2em solid #fff;
+    border-right: 0.2em solid #fff;
+    border-bottom: 0.2em solid #d0e2db;
+    border-left: 0.2em solid #fff;
+    border-radius: 6px;
+    display: inline-block;
+    float: left;
+    font-family: 'Noto Serif', 'Times New Roman', serif;
+    font-size: 1em;
+    margin: 0.1em 0.2em 0.2em;
+    padding: 0.4em 0.8em;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  #masthead nav > a:active {
+    border: 0.2em solid #019182;
+  }
+  
+  #masthead nav > a:hover {
+    border: 0.2em solid #ff954f;
+  }
+  
+  #masthead .c_flex {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    white-space: nowrap;
+    font-size: 0;
+  }
+  
+  #masthead .c_flex_3of12 {
+    position: relative;
+  }
+  
+  #masthead .c_flex_4of12 {
+    align-self: flex-end;
+    white-space: nowrap;
+  }
+  
+  #masthead .c_flex_5of12 {
+    align-self: flex-end;
+  }
+  
+  #masthead .o_logo {
+    float: right;
+    padding: 0.2em 0 0;
+    width: 75%;
+  }
+  
+  #masthead .o_btn-secondary {
+    color: #fff;
+    display: inline-block;
+    margin: 0 0.1em 0.1em;
+    padding: 0.35em 0.4em;
+    bottom: 0;
+    float: left;
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+  
+  #masthead input[type=text] {
+    display: inline-block;
+    float: left;
+    font-size: 1em;
+    height: 2em;
+    padding: 0 0.1em;
+    margin: 0 0.1em 0.2em 1.2em;
+    width: 9vw;
+    min-width: 2em;
+  }
+  
+  #masthead hr {
+    border-color: #03080C;
+  }
+  /*----------------------------------------------------------------------------*\
+   ## Footer
+  \*----------------------------------------------------------------------------*/
+  
+  #colophon {
+    background-color: #03080C;
+    position: relative;
+    padding: 10px 0 70px;
+    top: -5px;
+  }
+  
+  #colophon__inner {
+    border-bottom: 1px solid #d0e2db;
+  }
+  
+  #colophon a {
+    color: #d0e2db;
+    line-height: 1.4em;
+    text-decoration: none;
+  }
+  
+  #colophon h3 {
+    color: #d0e2db;
+    display: block;
+    font-size: 1em;
+    margin: 40px 0 0;
+    padding: 10px;
+    text-transform: uppercase;
+  }
+  
+  #colophon p {
+    color: #d0e2db;
+    display: block;
+    float: right;
+    font-size: 0.8em;
+    padding: 10px 20px 0 0;
+  }
+  
+  #colophon ul {
+    font-size: 0.6em;
+    list-style: none;
+    padding: 0 0 0 2em;
+  }
+  
+  #colophon hr {
+    border-color: #d0e2db;
+  }
+  
+  #colophon .o_logo {
+    max-width: 360px;
+  }
+  /*----------------------------------------------------------------------------*\
+    ## Classroom
+  \*----------------------------------------------------------------------------*/
+  #nameplate {
+    background-color: #d0e2db;
+    border-bottom: 2px solid #019182;
+    padding: 5px 0;
+    z-index: 999
+  }
+  
+  #nameplate .o_logomark {
+    height: 72px;
+    width: auto;
+    float: right;
+    padding: 5px 0 0;
+    z-index: 1000;
+  }
+  
+  #nameplate h1 {
+    display: block;
+    text-align: left;
+    font-size: 2.5em;
+    padding: 7px 0 0;
+    margin: 0;
+  }
+  
+  #nameplate p {
+    display: block;
+    text-align: left;
+    font-size: 1em;
+    padding: 2px 0 4px;
+    margin: 0;
+  }
+  
+  .video {
+    position: sticky;
+    top: 0;
+    float: right;
+    height: 480px;
+    width: 45%;
+    z-index: 99;
+  }
+  
+  .whiteboard {
+    border: 0;
+    height: 1280px;
+    position: relative;
+    top: -480px;
+    width: 100%;
+  }
+/*   
+  iframe {
+    width: 100%;
+    height: 100%;
+  } */
+  
+  /*----------------------------------------------------------------------------*\
+    ## Guides
+  \*----------------------------------------------------------------------------*/
+  .o_slideshow img {
+    height: auto;
+    width: 100%;
+  }
+  
+  .o_slideshow .caption {
+    background: rgba(255,255,255,0.8);
+    bottom: 0px;
+    color: #ff954f;
+    font-size: 1.3em;
+    padding: 0.5em 0;
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .o_slideshow button {
+    border: none;
+    background-color: rgba(255,255,255,0.3);
+    color: #019182;
+    cursor: pointer;
+    margin-top: -22px;
+    padding: 16px;
+    position: absolute;
+    top: 50%;
+    user-select: none;
+    width: auto;
+  }
+  
+  .o_slideshow .next {
+    top: 50%;
+    right: 0;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(255,255,255,0.8);
+    color: #ff954f;
+  }
+  /*----------------------------------------------------------------------------*\
+    ## Miscellaneous
+  \*----------------------------------------------------------------------------*/
+  
+  #form {
+    max-width: 768px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3.4em;
+    margin-top: 3em;
+  }
