@@ -14,14 +14,14 @@ const Index = ({posts}) => {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          This is a record of the thing's I have learnt. 
+          This is a record of what I've learned. 
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Here are my recents posts</h2>
         <ul className={utilStyles.list}>
           {posts.length > 0 && posts.map(
-            ({ _id, title = '', slug = '', publishedAt = '' }) =>
+            ({ _id, title = '', slug = '',  categories = [''], publishedAt = '', }) =>
               slug && (
                 <li className={utilStyles.listItem} key={_id}>
                   <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
