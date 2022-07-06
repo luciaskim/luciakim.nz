@@ -30,12 +30,14 @@ const ptComponents = {
   }
 }
 
-const Post = ({post}) => {
-  const { title, categories, mainImage, publishedAt, blockContent = [], markdown} = post
+
+
+const Post = ({ post }) => {
+  const { title, categories, mainImage, publishedAt, body = []} = post
   return (
     <Layout>
       <Head>
-          <title>{title}</title>
+        <title>{title}</title>
       </Head>
       <article>
         <h1>{title}</h1>
@@ -45,13 +47,13 @@ const Post = ({post}) => {
             <Image
               src={urlFor(mainImage)}
               alt="AWSome Day header"
-              width="1200"
-              height="400"
+              width='1200'
+              height='400'
             />
           </div>
         )}
         <PortableText
-        value={blockContent}
+        value={body}
         components={ptComponents}
         />
       </article>
@@ -64,8 +66,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "categories": categories[]->title, 
   mainImage, 
   publishedAt,
-  blockContent,
-  markdown
+  body
 }`
 
 export async function getStaticPaths() {
@@ -75,7 +76,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({params: {slug}})),
-    fallback: true,
+    fallback: false,
   }
 }
 
